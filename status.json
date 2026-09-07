@@ -1,0 +1,49 @@
+{
+  "generated": "2026-09-07T20:40:29.132Z",
+  "source": "BigDeborah host (tailscale status --json, /proc/uptime)",
+  "tailnet": "tailnet",
+  "tailnetDevices": 6,
+  "tailnetOnline": 3,
+  "tailnetNodes": [
+    {
+      "name": "BigDeborah",
+      "online": false,
+      "exitNode": false
+    },
+    {
+      "name": "OCI VPS",
+      "online": true,
+      "exitNode": false
+    },
+    {
+      "name": "GL-SFT1200",
+      "online": false,
+      "exitNode": false
+    },
+    {
+      "name": "yxanic",
+      "online": true,
+      "exitNode": false
+    },
+    {
+      "name": "Pixel 8 Pro",
+      "online": true,
+      "exitNode": false
+    },
+    {
+      "name": "RoyAsys",
+      "online": false,
+      "exitNode": false
+    }
+  ],
+  "cluster": "TheDebbies",
+  "pveNodes": [
+    {
+      "name": "BigDeborah",
+      "status": "online"
+    }
+  ],
+  "hostUptimeDays": 30.9,
+  "hostUptimeHuman": "30d 21h 38m",
+  "availabilityPct": "100.00"
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roy U. Abernathy — Senior Cybersecurity Engineer</title>
+  <meta name="description" content="Roy U. Abernathy — Senior Cybersecurity Engineer with 8+ years securing DoD and enterprise mission systems. Vulnerability management, RMF/NIST compliance, and security automation. Builder of a high-availability home lab." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-sweep" aria-hidden="true"></div>
+  <div class="bg-globe" aria-hidden="true"><div id="globeViz"></div></div>
+
+  <div class="soc-rail" aria-hidden="true">
+    <span class="rail-item" data-drawer="live"><span class="live">● LIVE</span></span>
+    <span class="sep">|</span>
+    <span class="rail-item" data-drawer="soc"><span><b>SOC</b> · OPERATIONAL</span></span>
+    <span class="sep hide-sm">|</span>
+    <span class="rail-item hide-sm" data-drawer="threats"><span>THREATS <b id="railThreats">0</b></span></span>
+    <span class="sep hide-sm">|</span>
+    <span class="rail-item hide-sm" data-drawer="nodes"><span>NODES <b id="railNodes">–/–</b></span></span>
+    <span class="sep hide-sm">|</span>
+    <span class="rail-item hide-sm" data-drawer="uptime"><span>UPTIME <b id="railUptime">–%</b></span></span>
+    <span class="sep">|</span>
+    <span class="rail-item" data-drawer="clock"><span><b id="railClock">--:--:--</b> UTC</span></span>
+  </div>
+
+  <!-- hover/focus drawer for rail pieces -->
+  <div class="rail-drawer" id="railDrawer" role="tooltip" aria-hidden="true">
+    <div class="rail-drawer__title" id="drawerTitle"></div>
+    <div class="rail-drawer__body" id="drawerBody"></div>
+  </div>
+
+  <div class="bg-ticker" aria-hidden="true">
+    <div class="bg-ticker__track" id="tickerTrack"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a class="nav__brand" href="#top">RA<span>.</span></a>
+    <div class="nav__links">
+      <a href="#about">About</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Lab</a>
+      <a href="#homelab">Topology</a>
+      <a href="#certs">Certifications</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#memberships">Memberships</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-toggle__icon">◐</span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <div class="hero__avatar" id="avatar" aria-hidden="true">
+        <span id="avatarInitials">RA</span>
+      </div>
+      <p class="hero__eyebrow" id="eyebrow">Senior Cybersecurity Engineer</p>
+      <h1 class="hero__name" id="name">Roy U. Abernathy</h1>
+      <p class="hero__tagline" id="tagline"></p>
+      <div class="hero__meta" id="heroMeta"></div>
+      <div class="hero__cta">
+        <a class="btn btn--primary" id="ctaPrimary" href="#experience">View Experience</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- ABOUT -->
+    <section class="section reveal" id="about">
+      <h2 class="section__title"><span class="section__num">01</span> About</h2>
+      <p class="section__lead" id="aboutText"></p>
+    </section>
+
+    <!-- CORE COMPETENCIES -->
+    <section class="section reveal" id="competencies">
+      <h2 class="section__title"><span class="section__num">02</span> Core Competencies</h2>
+      <div class="competencies" id="competencyList"></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section reveal" id="experience">
+      <h2 class="section__title"><span class="section__num">03</span> Experience</h2>
+      <div class="timeline" id="experienceList"></div>
+    </section>
+
+    <!-- PERSONAL PROJECTS / LAB -->
+    <section class="section reveal" id="projects">
+      <h2 class="section__title"><span class="section__num">04</span> Personal Projects</h2>
+      <div class="cards" id="projectList"></div>
+    </section>
+
+    <!-- HOME LAB DIAGRAM -->
+    <section class="section reveal" id="homelab">
+      <h2 class="section__title"><span class="section__num">05</span> Home Lab Topology</h2>
+      <div class="diagram" id="homelabDiagram"></div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section reveal" id="certs">
+      <h2 class="section__title"><span class="section__num">06</span> Certifications</h2>
+      <div class="cards" id="certList"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section reveal" id="skills">
+      <h2 class="section__title"><span class="section__num">07</span> Skills</h2>
+      <div class="skills" id="skillList"></div>
+    </section>
+
+    <!-- EDUCATION & MILITARY -->
+    <section class="section reveal" id="education">
+      <h2 class="section__title"><span class="section__num">08</span> Education &amp; Military Service</h2>
+      <div class="cards" id="educationList"></div>
+    </section>
+
+    <!-- MEMBERSHIPS -->
+    <section class="section reveal" id="memberships">
+      <h2 class="section__title"><span class="section__num">09</span> Memberships &amp; Recognition</h2>
+      <div class="cards" id="membershipList"></div>
+    <!-- CONTACT -->
+    <section class="section reveal" id="contact">
+      <h2 class="section__title"><span class="section__num">10</span> Contact</h2>
+      <p class="section__lead" id="contactNote"></p>
+      <p class="contact__availability" id="contactAvailability"></p>
+      <form class="contact__form" id="contactForm" novalidate>
+        <input class="contact__hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="contact__row">
+          <label class="contact__field">
+            <span>Name</span>
+            <input type="text" name="name" id="cfName" autocomplete="name" placeholder="Jane Doe" required />
+          </label>
+          <label class="contact__field">
+            <span>Email</span>
+            <input type="email" name="email" id="cfEmail" autocomplete="email" placeholder="jane@company.com" required />
+          </label>
+        </div>
+        <label class="contact__field">
+          <span>Subject</span>
+          <input type="text" name="subject" id="cfSubject" placeholder="Re: a role / project / question" required />
+        </label>
+        <label class="contact__field">
+          <span>Message</span>
+          <textarea name="message" id="cfMessage" rows="5" placeholder="How can I help?" required></textarea>
+        </label>
+        <div class="contact__actions">
+          <button type="submit" class="btn btn--primary" id="cfSubmit">Send Message →</button>
+          <span class="contact__status" id="cfStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <div class="social" id="socialLinks" aria-label="Profiles"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footerText">© <span id="year"></span> Roy U. Abernathy · Built on the BigDeborah homelab stack</p>
+    <a href="#top" class="footer__top">Back to top ↑</a>
+  </footer>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/globe.gl.min.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="globe.js"></script>
+  <script>
+    /* Standalone clock fallback — survives any app.js error and ignores cache */
+    (function () {
+      var el = document.getElementById("railClock");
+      if (!el) return;
+      function p(n) { return String(n).padStart(2, "0"); }
+      function tick() {
+        var d = new Date();
+        el.textContent = p(d.getUTCHours()) + ":" + p(d.getUTCMinutes()) + ":" + p(d.getUTCSeconds());
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+
+</html>
