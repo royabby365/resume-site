@@ -1,30 +1,49 @@
-// CF Pages Function — resume-site contact form -> Brevo SMTP (direct)
-// Credentials masked in source; Brevo endpoint: api.brevo.com/v3/smtp/email
+// CF Pages Function — resume-site contact form -> Telegram channel
+// Required Pages production secrets: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID.
+function json(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { "Content-Type": "application/json" }
+  });
+}
+
 export async function onRequestPost(context) {
   try {
-    const form = await context.request.formData();
-    const name = String(form.get("name") || "");
-    const email = String(form.get("email") || "");
-    const subject = String(form.get("subject") || "Resume Contact");
-    const message = String(form.get("message") || "");
-    const payload = {
-      sender: { name: name || "Contact", email: "kuma@royabernathy.info" },
-      to: [{ email: "roy.u.abernathy@gmail.com", name: "Roy Abernathy" }],
-      replyTo: { email: email, name: name },
-      subject: subject,
-      htmlContent: `<p><b>From:</b> ${name} (${email})</p><p>${message.replace(/\n/g,"<br>")}</p>`
-    };
-    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+    const body = await context.request.json();
+    const name = String(body.name || "").trim();
+    const email = String(body.email || "").trim();
+    const subject = String(body.subject || "Resume Contact").trim();
+    const message = String(body.message || "").trim();
+
+    if (!name || !email || !subject || !message) {
+      return json({ ok: false, error: "Missing required field" }, 400);
+    }
+
+    const text = [
+      "New resume contact",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Subject: ${subject}`,
+      "",
+      message
+    ].join("\\n");
+
+    const res = await fetch(`https://api.telegram.org/bot${context.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": context.env.BREVO_API_KEY
-      },
-      body: JSON.stringify(payload)
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: context.env.TELEGRAM_CHAT_ID,
+        text,
+        disable_web_page_preview: true
+      })
     });
-    if (!res.ok) return new Response(`Brevo error: ${res.status}`, { status: 502 });
-    return new Response("OK", { status: 200 });
+
+    const result = await res.json();
+    if (!res.ok || !result.ok) {
+      return json({ ok: false, error: "Telegram delivery failed" }, 502);
+    }
+    return json({ ok: true });
   } catch (e) {
-    return new Response("Error: "+String(e), { status: 500 });
+    return json({ ok: false, error: "Invalid request" }, 400);
   }
 }
