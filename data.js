@@ -145,6 +145,33 @@ const RESUME = {
     },
   ],
 
+  /* ---- FOSS & Community (rendered inside the Personal Projects section) ---- */
+  foss: {
+    title: "FOSS & Community Contributions",
+    note:
+      "Open source isn't a side effect of the projects above — it's the point. Every project on this page ships with public source, and the tools below are maintained so the community can use, study, and build on them. This site is open too: the template that powers it is MIT-licensed and free to fork.",
+    items: [
+      {
+        title: "SOC Resume Template (this site)",
+        detail:
+          "The self-hostable, SOC-style resume/portfolio powering this very page — live data rail, click-to-pin drawers, a real FireHOL attack globe, and every number sourced from real data. MIT-licensed: fork it, feed it your own data, self-host it anywhere.",
+        link: "https://github.com/royabby365/soc-resume-template",
+      },
+      {
+        title: "IzzyOnDroid Reproducible Builds (rbtlog)",
+        detail:
+          "Builder recipes and build logs contributed to the IzzyOnDroid Reproducible Builds Transparency Log (AGPL-3.0) — part of the pipeline that lets the community verify independent Android apps build bit-for-bit from source.",
+        link: "https://github.com/royabby365/izzy-verification-builder",
+      },
+      {
+        title: "hermes-chat",
+        detail:
+          "Self-hostable web chat UI for the open-source Hermes Agent — model picker, session management, and settings, so anyone can run a private agent chat front end on their own infrastructure.",
+        link: "https://github.com/royabby365/hermes-chat",
+      },
+    ],
+  },
+
   /* ---- Certifications ---- */
   certifications: [
     { name: "CompTIA Security+", issuer: "CompTIA", date: "2017", note: "Expires Mar 2029" },

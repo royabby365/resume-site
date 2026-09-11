@@ -111,6 +111,29 @@
       .join("");
   }
 
+  /* ---- FOSS & Community (sub-block of Personal Projects) ---- */
+  const fossWrap = $("fossList");
+  if (fossWrap && R.foss) {
+    const F = R.foss;
+    const ft = $("fossTitle");
+    if (ft) ft.textContent = F.title || "FOSS & Community";
+    const fn = $("fossNote");
+    if (fn) fn.textContent = F.note || "";
+    fossWrap.innerHTML = (F.items || [])
+      .map(
+        (p) =>
+          '<div class="card card--foss">' +
+          '<div class="card__icon" aria-hidden="true">♥</div>' +
+          '<h3 class="card__title">' + esc(p.title) + "</h3>" +
+          (p.detail ? '<p class="card__note">' + esc(p.detail) + "</p>" : "") +
+          (p.link
+            ? '<a class="card__link" href="' + esc(p.link) + '" target="_blank" rel="noopener">View on GitHub →</a>'
+            : "") +
+          "</div>"
+      )
+      .join("");
+  }
+
   /* ---- Home Lab Diagram (dynamic, responsive SVG) ---- */
   const diaWrap = $("homelabDiagram");
   if (diaWrap && R.homelab) {

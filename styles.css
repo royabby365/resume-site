@@ -267,6 +267,12 @@ body { padding-top: 26px; }
 
 /* ---- Cards grid ---- */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+/* ---- FOSS & Community block (inside Personal Projects) ---- */
+.foss { margin-top: 44px; padding-top: 30px; border-top: 1px dashed var(--border); }
+.foss__title { font-size: 1.15rem; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 12px; }
+.foss__note { margin-bottom: 22px; }
+.card--foss .card__icon { color: var(--accent); }
 .card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 22px; transition: transform 0.15s, border-color 0.2s;
