@@ -253,7 +253,7 @@ const RESUME = {
   // The "Contact me" form POSTs to contact.endpoint; the destination
   // address lives only server-side (see contact.php / mailer config).
   contact: {
-    endpoint: "/contact.php",
+    endpoint: "/contact",
     note: "Messages go straight to my inbox — no address published here.",
     availability: "Open to remote & contract roles · typically replies within 48h",
   },
