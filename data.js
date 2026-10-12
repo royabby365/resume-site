@@ -174,7 +174,7 @@ const RESUME = {
 
   /* ---- Certifications ---- */
   certifications: [
-    { name: "CompTIA CySA+", issuer: "CompTIA", date: "2026", note: "Expires Sep 2029"
+    { name: "CompTIA CySA+", issuer: "CompTIA", date: "2026", note: "Expires Sep 2029" },
     { name: "CompTIA Security+", issuer: "CompTIA", date: "2017", note: "Expires Sep 2029" },
     { name: "CompTIA Network+", issuer: "CompTIA", date: "2018", note: "Expires Sep 2029" },
     { name: "CompTIA A+", issuer: "CompTIA", date: "2016", note: "Expires Sep 2029" },
