@@ -22,7 +22,7 @@ const RESUME = {
   ],
 
   about:
-    "Senior Cybersecurity Engineer with 8+ years of experience securing mission-critical Department of Defense and enterprise portfolios — leading 30-person teams, managing $2.5B in mission systems, and delivering a 100% ATO success rate. Expert in vulnerability management and a veteran with a \"builder\" mindset: I automate complex security workflows via command line and CI/CD pipelines, and I run a high-availability home lab to stay sharp.",
+    "Senior Cybersecurity Engineer with 9+ years of experience securing mission-critical Department of Defense and enterprise portfolios — leading 30-person teams, managing $2.5B in mission systems, and delivering a 100% ATO success rate. Expert in vulnerability management and a veteran with a \"builder\" mindset: I automate complex security workflows via command line and CI/CD pipelines, and I run a high-availability home lab to stay sharp.",
 
   /* ---- Core Competencies ---- */
   competencies: [
@@ -111,9 +111,14 @@ const RESUME = {
   /* ---- Personal Projects ---- */
   projects: [
     {
-      title: "Enterprise Home Lab & Security Sandbox",
+      title: "Enterprise Home Lab & Security Sandbox - v1",
       detail:
-        "High-availability Proxmox cluster on a mini-PC fleet providing redundant compute and storage for a self-hosted services stack. Runs a reverse-proxy gateway with automatic TLS, isolated service networks, and a VPN-tunnelled egress path. Used daily to prototype detection rules, validate STIG hardening, and rehearse incident-response playbooks in a safe, disposable environment.",
+        "High-availability Proxmox cluster on a mini-PC fleet providing redundant compute and storage for a self-hosted services stack. Runs a reverse-proxy gateway with automatic TLS, isolated service networks, and a VPN-tunnelled egress path. Used daily to prototype detection rules, validate STIG hardening, and rehearse incident-response playbooks in a safe, disposable environment. This project evolved past the abilities of the minisforum GK41 it was running on.",
+    },
+    {
+      title: "Enterprise Home Lab & Security Sandbox - v2",
+      detail:
+        "High-availability Proxmox cluster on a Dell Precision T5810 with an Intel Xeon E5-2690 v4 (2.6GHz, 14 core), 256GB DDR4 ECC RAM, a NVIDIA Tesla P40, and 10TB of storage. Enhanced by a free-tier Oracle Cloud VPS that serves as the reverse proxy, Headscale/Headplane backbone network for the entire mess and of course my password manager. Also enhances the ASUS RT-AX3000 flashed with AsusWRT Merlin securing my Home LAN. This project serves multiple containers that my family has grown to love as well - Jellyfin, Stirling PDF, Nextcloud, just to name the heavy hitters. This thing is a MONSTER.",
     },
     {
       title: "Automated Vulnerability & Compliance Pipeline",
@@ -288,5 +293,5 @@ const RESUME = {
   },
 
   links: {},
-  footer: "Roy U. Abernathy · Self-hosted on the BigDeborah homelab stack",
+  footer: "Roy U. Abernathy · Updated 12 October 2026",
 };
