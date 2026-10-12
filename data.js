@@ -174,13 +174,15 @@ const RESUME = {
 
   /* ---- Certifications ---- */
   certifications: [
-    { name: "CompTIA Security+", issuer: "CompTIA", date: "2017", note: "Expires Mar 2029" },
-    { name: "CompTIA Network+", issuer: "CompTIA", date: "2018" },
-    { name: "CompTIA A+", issuer: "CompTIA", date: "2016" },
-    { name: "ITIL Foundation", issuer: "Axelos", date: "2019" },
+    { name: "CompTIA CySA+", issuer: "CompTIA", date: "2026", note: "Expires Sep 2029"
+    { name: "CompTIA Security+", issuer: "CompTIA", date: "2017", note: "Expires Sep 2029" },
+    { name: "CompTIA Network+", issuer: "CompTIA", date: "2018", note: "Expires Sep 2029" },
+    { name: "CompTIA A+", issuer: "CompTIA", date: "2016", note: "Expires Sep 2029" },
+    { name: "ITIL Foundation", issuer: "Axelos", date: "2019", note: "Expired Jan 2026" },
     { name: "Linux Essentials", issuer: "LPI", date: "2020" },
-    { name: "ACAS Operator & Supervisor", issuer: "DoD / NCMS", date: "2023" },
-    { name: "ESS Administrator 201 (ePO 5.10)", issuer: "McAfee / DoD", date: "2021" },
+    { name: "ACAS Operator & Supervisor", issuer: "DoD / NCMS", date: "2023", note: "Renewed through March 2027" },
+    { name: "ESS Administrator 201 (ePO 5.10)", issuer: "Trellix / DoD", date: "2021" },
+    { name: "ESS Administrator 301 (ePO 5.10)", issuer: "Trellix / DoD", date: "2021" },
   ],
 
   /* ---- Skills (0-100) ---- */
