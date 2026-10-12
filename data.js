@@ -235,11 +235,6 @@ const RESUME = {
       name: "WOW Award",
       detail: "Alesig Consulting recognition (Nov 2023) for initiative and service beyond role.",
     },
-    {
-      type: "Award",
-      name: "Good Citizenship Medal",
-      detail: "Earned with the rank of Eagle Scout — Boy Scouts of America recognition for citizenship and leadership.",
-    },
   ],
 
   /* ---- Home Lab diagram (generic, safe, richly labeled) ---- */
